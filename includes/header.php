@@ -26,11 +26,11 @@
               </ul>
             </div>
    <?php   if(strlen($_SESSION['login'])==0)
-	{	
+	{
 ?>
  <div class="login_btn"> <a href="#loginform" class="btn btn-xs uppercase" data-toggle="modal" data-dismiss="modal">Login / Register</a> </div>
 <?php }
-else{ 
+else{
 
 echo "Welcome To Car rental portal";
  } ?>
@@ -39,7 +39,7 @@ echo "Welcome To Car rental portal";
       </div>
     </div>
   </div>
-  
+
   <!-- Navigation -->
   <nav id="navigation_bar" class="navbar navbar-default">
     <div class="container">
@@ -49,8 +49,8 @@ echo "Welcome To Car rental portal";
       <div class="header_wrap">
         <div class="user_login">
           <ul>
-            <li class="dropdown"> <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user-circle" aria-hidden="true"></i> 
-<?php 
+            <li class="dropdown"> <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user-circle" aria-hidden="true"></i>
+<?php
 $email=$_SESSION['login'];
 $sql ="SELECT FullName FROM tblusers WHERE EmailId=:email ";
 $query= $dbh -> prepare($sql);
@@ -93,8 +93,8 @@ foreach($results as $result)
       </div>
       <div class="collapse navbar-collapse" id="navigation">
         <ul class="nav navbar-nav">
-          <li><a href="index.php">Home</a>    </li>
-          	 
+          <li><a href="main.php">Home</a>    </li>
+
           <li><a href="page.php?type=aboutus">About Us</a></li>
           <li><a href="car-listing.php">Car Listing</a>
           <li><a href="page.php?type=faqs">FAQs</a></li>
@@ -104,6 +104,6 @@ foreach($results as $result)
       </div>
     </div>
   </nav>
-  <!-- Navigation end --> 
-  
+  <!-- Navigation end -->
+
 </header>

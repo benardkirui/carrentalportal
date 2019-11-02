@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 include('includes/config.php');
 error_reporting(0);
@@ -34,17 +34,17 @@ error_reporting(0);
 <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/images/favicon-icon/apple-touch-icon-72-precomposed.png">
 <link rel="apple-touch-icon-precomposed" href="assets/images/favicon-icon/apple-touch-icon-57-precomposed.png">
 <link rel="shortcut icon" href="assets/images/favicon-icon/favicon.png">
-<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
 </head>
 <body>
 
 <!-- Start Switcher -->
 <?php include('includes/colorswitcher.php');?>
-<!-- /Switcher -->  
-        
+<!-- /Switcher -->
+
 <!--Header-->
 <?php include('includes/header.php');?>
-<!-- /Header --> 
+<!-- /Header -->
 
 <!-- Banners -->
 <section id="banner" class="banner-section">
@@ -53,19 +53,13 @@ error_reporting(0);
       <div class="row">
         <div class="col-md-5 col-md-push-7">
           <div class="banner_content">
-            <h1>Group 6</h1>
-            <p>MEMBERS</p>
-            <p>Festus kipkorir sct221-8700/2015</p>
-            <p>Shadrack kipkorir sct221-9049/2015</p>
-            <p>Bernard kirui sct221-9950/2015</p>
-            <p>Joshua kerempe sct221-0240/2016</p>
-            <p>Luwrence tome Bit-001-5175/2013</p>
+        
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- /Banners --> 
+<!-- /Banners -->
 
 
 <!-- Resent Cat-->
@@ -76,8 +70,8 @@ error_reporting(0);
       <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
        <a href="#" class="btn">Read More <span class="angle_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></span></a> </div>
     </div>
-    <div class="row"> 
-      
+    <div class="row">
+
       <!-- Nav tabs -->
       <div class="recent-tab">
         <ul class="nav nav-tabs" role="tablist">
@@ -96,8 +90,8 @@ $cnt=1;
 if($query->rowCount() > 0)
 {
 foreach($results as $result)
-{  
-?>  
+{
+?>
 
 <div class="col-list-3">
 <div class="recent-car-list">
@@ -110,7 +104,7 @@ foreach($results as $result)
 </div>
 <div class="car-title-m">
 <h6><a href="vehical-details.php?vhid=<?php echo htmlentities($result->id);?>"><?php echo htmlentities($result->BrandName);?> , <?php echo htmlentities($result->VehiclesTitle);?></a></h6>
-<span class="price">Ksh<?php echo htmlentities($result->PricePerDay);?> /Day</span> 
+<span class="price">Ksh<?php echo htmlentities($result->PricePerDay);?> /Day</span>
 </div>
 <div class="inventory_info_m">
 <p><?php echo substr($result->VehiclesOverview,0,70);?></p>
@@ -118,12 +112,12 @@ foreach($results as $result)
 </div>
 </div>
 <?php }}?>
-       
+
       </div>
     </div>
   </div>
 </section>
-<!-- /Resent Cat --> 
+<!-- /Resent Cat -->
 
 <!-- Fun Facts-->
 <section class="fun-facts-section">
@@ -166,7 +160,7 @@ foreach($results as $result)
   <!-- Dark Overlay-->
   <div class="dark-overlay"></div>
 </section>
-<!-- /Fun Facts--> 
+<!-- /Fun Facts-->
 
 
 <!--Testimonial -->
@@ -177,7 +171,7 @@ foreach($results as $result)
     </div>
     <div class="row">
       <div id="testimonial-slider">
-<?php 
+<?php
 $tid=1;
 $sql = "SELECT tbltestimonial.Testimonial,tblusers.FullName from tbltestimonial join tblusers on tbltestimonial.UserEmail=tblusers.EmailId where tbltestimonial.status=:tid";
 $query = $dbh -> prepare($sql);
@@ -192,7 +186,7 @@ foreach($results as $result)
 
 
         <div class="testimonial-m">
- 
+
           <div class="testimonial-content">
             <div class="testimonial-heading">
               <h5><?php echo htmlentities($result->FullName);?></h5>
@@ -201,49 +195,49 @@ foreach($results as $result)
         </div>
         </div>
         <?php }} ?>
-        
-       
-  
+
+
+
       </div>
     </div>
   </div>
   <!-- Dark Overlay-->
   <div class="dark-overlay"></div>
 </section>
-<!-- /Testimonial--> 
+<!-- /Testimonial-->
 
 
 <!--Footer -->
 <?php include('includes/footer.php');?>
-<!-- /Footer--> 
+<!-- /Footer-->
 
 <!--Back to top-->
 <div id="back-top" class="back-top"> <a href="#top"><i class="fa fa-angle-up" aria-hidden="true"></i> </a> </div>
-<!--/Back to top--> 
+<!--/Back to top-->
 
 <!--Login-Form -->
 <?php include('includes/login.php');?>
-<!--/Login-Form --> 
+<!--/Login-Form -->
 
 <!--Register-Form -->
 <?php include('includes/registration.php');?>
 
-<!--/Register-Form --> 
+<!--/Register-Form -->
 
 <!--Forgot-password-Form -->
 <?php include('includes/forgotpassword.php');?>
-<!--/Forgot-password-Form --> 
+<!--/Forgot-password-Form -->
 
-<!-- Scripts --> 
+<!-- Scripts -->
 <script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script> 
-<script src="assets/js/interface.js"></script> 
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/interface.js"></script>
 <!--Switcher-->
 <script src="assets/switcher/js/switcher.js"></script>
-<!--bootstrap-slider-JS--> 
-<script src="assets/js/bootstrap-slider.min.js"></script> 
-<!--Slider-JS--> 
-<script src="assets/js/slick.min.js"></script> 
+<!--bootstrap-slider-JS-->
+<script src="assets/js/bootstrap-slider.min.js"></script>
+<!--Slider-JS-->
+<script src="assets/js/slick.min.js"></script>
 <script src="assets/js/owl.carousel.min.js"></script>
 
 </body>
