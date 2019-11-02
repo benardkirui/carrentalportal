@@ -1,252 +1,150 @@
-<?php 
-session_start();
-include('includes/config.php');
-error_reporting(0);
-
-?>
-
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
+
+<!-- Mirrored from thetheme.io/thesaas/block/cover.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 05 Jul 2019 12:03:31 GMT -->
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="keywords" content="">
-<meta name="description" content="">
-<title>Car Rental Portal</title>
-<!--Bootstrap -->
-<link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css">
-<link rel="stylesheet" href="assets/css/style.css" type="text/css">
-<link rel="stylesheet" href="assets/css/owl.carousel.css" type="text/css">
-<link rel="stylesheet" href="assets/css/owl.transitions.css" type="text/css">
-<link href="assets/css/slick.css" rel="stylesheet">
-<link href="assets/css/bootstrap-slider.min.css" rel="stylesheet">
-<link href="assets/css/font-awesome.min.css" rel="stylesheet">
-		<link rel="stylesheet" id="switcher-css" type="text/css" href="assets/switcher/css/switcher.css" media="all" />
-		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/red.css" title="red" media="all" data-default-color="true" />
-		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/orange.css" title="orange" media="all" />
-		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/blue.css" title="blue" media="all" />
-		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/pink.css" title="pink" media="all" />
-		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/green.css" title="green" media="all" />
-		<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/purple.css" title="purple" media="all" />
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/images/favicon-icon/apple-touch-icon-144-precomposed.png">
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/images/favicon-icon/apple-touch-icon-114-precomposed.html">
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/images/favicon-icon/apple-touch-icon-72-precomposed.png">
-<link rel="apple-touch-icon-precomposed" href="assets/images/favicon-icon/apple-touch-icon-57-precomposed.png">
-<link rel="shortcut icon" href="assets/images/favicon-icon/favicon.png">
-<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet"> 
-</head>
-<body>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="No page can go online without having an eye catching cover to keep your visitors in the page.">
+    <meta name="keywords" content="cover, header, block, html code">
 
-<!-- Start Switcher -->
-<?php include('includes/colorswitcher.php');?>
-<!-- /Switcher -->  
-        
-<!--Header-->
-<?php include('includes/header.php');?>
-<!-- /Header --> 
+    <title>Group Project</title>
 
-<!-- Banners -->
-<section id="banner" class="banner-section">
-  <div class="container">
-    <div class="div_zindex">
-      <div class="row">
-        <div class="col-md-5 col-md-push-7">
-          <div class="banner_content">
-            <h1>Group 6</h1>
-            <p>MEMBERS</p>
-            <p>Festus kipkorir sct221-8700/2015</p>
-            <p>Shadrack kipkorir sct221-9049/2015</p>
-            <p>Bernard kirui sct221-9950/2015</p>
-            <p>Joshua kerempe sct221-0240/2016</p>
-            <p>Luwrence tome Bit-001-5175/2013</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- /Banners --> 
+    <!-- Styles -->
+    <link href="assets/assets/css/page.min.css" rel="stylesheet">
+    <link href="assets/assets/css/style.css" rel="stylesheet">
 
 
-<!-- Resent Cat-->
-<section class="section-padding gray-bg">
-  <div class="container">
-    <div class="section-header text-center">
-      <h2>Find the Best <span>CarForYou</span></h2>
-      <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
-       <a href="#" class="btn">Read More <span class="angle_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></span></a> </div>
-    </div>
-    <div class="row"> 
-      
-      <!-- Nav tabs -->
-      <div class="recent-tab">
-        <ul class="nav nav-tabs" role="tablist">
-          <li role="presentation" class="active"><a href="#resentnewcar" role="tab" data-toggle="tab">New Car</a></li>
-        </ul>
-      </div>
-      <!-- Recently Listed New Cars -->
-      <div class="tab-content">
-        <div role="tabpanel" class="tab-pane active" id="resentnewcar">
+  </head>
 
-<?php $sql = "SELECT tblvehicles.VehiclesTitle,tblbrands.BrandName,tblvehicles.PricePerDay,tblvehicles.FuelType,tblvehicles.ModelYear,tblvehicles.id,tblvehicles.SeatingCapacity,tblvehicles.VehiclesOverview,tblvehicles.Vimage1 from tblvehicles join tblbrands on tblbrands.id=tblvehicles.VehiclesBrand";
-$query = $dbh -> prepare($sql);
-$query->execute();
-$results=$query->fetchAll(PDO::FETCH_OBJ);
-$cnt=1;
-if($query->rowCount() > 0)
-{
-foreach($results as $result)
-{  
-?>  
+  <body class="container-fluid"  style="padding-left:0px;padding-right:0px;">
 
-<div class="col-list-3">
-<div class="recent-car-list">
-<div class="car-info-box"> <a href="vehical-details.php?vhid=<?php echo htmlentities($result->id);?>"><img src="admin/img/vehicleimages/<?php echo htmlentities($result->Vimage1);?>" class="img-responsive" alt="image"></a>
-<ul>
-<li><i class="fa fa-car" aria-hidden="true"></i><?php echo htmlentities($result->FuelType);?></li>
-<li><i class="fa fa-calendar" aria-hidden="true"></i><?php echo htmlentities($result->ModelYear);?> Model</li>
-<li><i class="fa fa-user" aria-hidden="true"></i><?php echo htmlentities($result->SeatingCapacity);?> seats</li>
-</ul>
-</div>
-<div class="car-title-m">
-<h6><a href="vehical-details.php?vhid=<?php echo htmlentities($result->id);?>"><?php echo htmlentities($result->BrandName);?> , <?php echo htmlentities($result->VehiclesTitle);?></a></h6>
-<span class="price">Ksh<?php echo htmlentities($result->PricePerDay);?> /Day</span> 
-</div>
-<div class="inventory_info_m">
-<p><?php echo substr($result->VehiclesOverview,0,70);?></p>
-</div>
-</div>
-</div>
-<?php }}?>
-       
-      </div>
-    </div>
-  </div>
-</section>
-<!-- /Resent Cat --> 
+    <!-- Main Content -->
+    <main class="main-content" >
 
-<!-- Fun Facts-->
-<section class="fun-facts-section">
-  <div class="container div_zindex">
-    <div class="row">
-      <div class="col-lg-3 col-xs-6 col-sm-3">
-        <div class="fun-facts-m">
-          <div class="cell">
-            <h2><i class="fa fa-calendar" aria-hidden="true"></i>40+</h2>
-            <p>Years In Business</p>
+
+      <!-- Header -->
+      <div class="header text-white h-fullscreen text-center text-lg-left pb-8" style="background-image: url(assets/images/bg1.jpg);margin-top:0px;padding-top:10px;"  data-overlay="8">
+        <div class="container">
+
+          <div class="row h-100">
+            <div class="col-lg-8 mx-auto align-self-center">
+              <h1 class="display-3 text-center">Group 6</h1>
+              <div class="accordion accordion-arrow-right" id="accordion-4">
+                <div class="card bg-transparent">
+                  <h5 class="card-title bg-transparent">
+                    <a data-toggle="collapse" href="#collapse-4-1" class="collapsed" aria-expanded="false">Problem Description</a>
+                  </h5>
+
+                  <div id="collapse-4-1" class="collapse" data-parent="#accordion-4" style="">
+                    <div class="card-body">
+                      Absolutely! We work with top payment companies which guarantees your safety and security. All billing information is stored on our payment processing partner which has the most stringent level of certification available in the payments industry.
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="card bg-transparent">
+                  <h5 class="card-title bg-transparent">
+                    <a class="collapsed" data-toggle="collapse" href="#collapse-4-2" aria-expanded="false">Team Members</a>
+                  </h5>
+
+                  <div id="collapse-4-2" class="collapse" data-parent="#accordion-4" style="">
+                    <div class="card-body bg-transparent">
+
+                      <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Full Name</th>
+                    <th>Registration Number</th>
+                    <th>Picture</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Festus Kipkorir</td>
+                    <td>SCT221-8700/2015</td>
+                    <td> <img src="assets/members/1.jpg" alt=""> </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Shadrack Kipkorir</td>
+                    <td>SCT221-9049/2015</td>
+                    <td><img src="assets/members/2.jpg" alt=""></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Benard Kirui</td>
+                    <td>SCT221-9950/2015</td>
+                    <td><img src="assets/members/3.jpg" alt=""></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">4</th>
+                    <td>Joshua Kerempe</td>
+                    <td>SCT221-0240/2015</td>
+                    <td><img src="assets/members/4.jpg" alt=""></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">5</th>
+                    <td>Lawrence Tome</td>
+                    <td>BIT-001-5175/2013</td>
+                    <td><img src="assets/members/5.jpg" alt=""></td>
+                  </tr>
+                </tbody>
+              </table>
+
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="card bg-transparent">
+                  <h5 class="card-title bg-transparent">
+                    <a class="collapsed" href="main.php" aria-expanded="false">View Project</a>
+                  </h5>
+
+                  <div id="collapse-4-3" class="collapse" data-parent="#accordion-4" style="">
+                    <div class="card-body">
+                      You can cancel your subscription anytime in your account. Once the subscription is cancelled, you will not be charged next month. You will continue to have access to your account until your current subscription expires.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
           </div>
+
         </div>
       </div>
-      <div class="col-lg-3 col-xs-6 col-sm-3">
-        <div class="fun-facts-m">
-          <div class="cell">
-            <h2><i class="fa fa-car" aria-hidden="true"></i>1200+</h2>
-            <p>New Cars For Sale</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-xs-6 col-sm-3">
-        <div class="fun-facts-m">
-          <div class="cell">
-            <h2><i class="fa fa-car" aria-hidden="true"></i>1000+</h2>
-            <p>Used Cars For Sale</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-xs-6 col-sm-3">
-        <div class="fun-facts-m">
-          <div class="cell">
-            <h2><i class="fa fa-user-circle-o" aria-hidden="true"></i>600+</h2>
-            <p>Satisfied Customers</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Dark Overlay-->
-  <div class="dark-overlay"></div>
-</section>
-<!-- /Fun Facts--> 
 
 
-<!--Testimonial -->
-<section class="section-padding testimonial-section parallex-bg">
-  <div class="container div_zindex">
-    <div class="section-header white-text text-center">
-      <h2>Our Satisfied <span>Customers</span></h2>
-    </div>
-    <div class="row">
-      <div id="testimonial-slider">
-<?php 
-$tid=1;
-$sql = "SELECT tbltestimonial.Testimonial,tblusers.FullName from tbltestimonial join tblusers on tbltestimonial.UserEmail=tblusers.EmailId where tbltestimonial.status=:tid";
-$query = $dbh -> prepare($sql);
-$query->bindParam(':tid',$tid, PDO::PARAM_STR);
-$query->execute();
-$results=$query->fetchAll(PDO::FETCH_OBJ);
-$cnt=1;
-if($query->rowCount() > 0)
-{
-foreach($results as $result)
-{  ?>
+      <!-- END Header -->
 
 
-        <div class="testimonial-m">
- 
-          <div class="testimonial-content">
-            <div class="testimonial-heading">
-              <h5><?php echo htmlentities($result->FullName);?></h5>
-            <p><?php echo htmlentities($result->Testimonial);?></p>
-          </div>
-        </div>
-        </div>
-        <?php }} ?>
-        
-       
-  
-      </div>
-    </div>
-  </div>
-  <!-- Dark Overlay-->
-  <div class="dark-overlay"></div>
-</section>
-<!-- /Testimonial--> 
 
 
-<!--Footer -->
-<?php include('includes/footer.php');?>
-<!-- /Footer--> 
+    </main><!-- /.main-content -->
 
-<!--Back to top-->
-<div id="back-top" class="back-top"> <a href="#top"><i class="fa fa-angle-up" aria-hidden="true"></i> </a> </div>
-<!--/Back to top--> 
 
-<!--Login-Form -->
-<?php include('includes/login.php');?>
-<!--/Login-Form --> 
 
-<!--Register-Form -->
-<?php include('includes/registration.php');?>
+    <!-- Scripts -->
+    <script src="assets/assets/js/page.min.js"></script>
+    <!-- <script src="assets/assets/js/script.js"></script> -->
 
-<!--/Register-Form --> 
-
-<!--Forgot-password-Form -->
-<?php include('includes/forgotpassword.php');?>
-<!--/Forgot-password-Form --> 
-
-<!-- Scripts --> 
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script> 
-<script src="assets/js/interface.js"></script> 
-<!--Switcher-->
-<script src="assets/switcher/js/switcher.js"></script>
-<!--bootstrap-slider-JS--> 
-<script src="assets/js/bootstrap-slider.min.js"></script> 
-<!--Slider-JS--> 
-<script src="assets/js/slick.min.js"></script> 
-<script src="assets/js/owl.carousel.min.js"></script>
-
-</body>
-
-<!-- Mirrored from themes.webmasterdriver.net/carforyou/demo/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 16 Jun 2017 07:22:11 GMT -->
+  </body>
+<style media="screen">
+th, td{
+  color: rgba(255,255,255,0.85) !important;
+  font-size: 15px !important;
+}
+  img{
+    height:40px;
+    width:40px;
+    border-radius: 50%;
+  }
+</style>
 </html>

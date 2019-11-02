@@ -2,26 +2,34 @@
 //error_reporting(0);
 if(isset($_POST['signup']))
 {
-$fname=$_POST['fullname'];
-$email=$_POST['emailid']; 
-$mobile=$_POST['mobileno'];
-$password=md5($_POST['password']); 
-$sql="INSERT INTO  tblusers(FullName,EmailId,ContactNo,Password) VALUES(:fname,:email,:mobile,:password)";
-$query = $dbh->prepare($sql);
-$query->bindParam(':fname',$fname,PDO::PARAM_STR);
-$query->bindParam(':email',$email,PDO::PARAM_STR);
-$query->bindParam(':mobile',$mobile,PDO::PARAM_STR);
-$query->bindParam(':password',$password,PDO::PARAM_STR);
-$query->execute();
-$lastInsertId = $dbh->lastInsertId();
-if($lastInsertId)
-{
-echo "<script>alert('Registration successfull. Now you can login');</script>";
-}
-else 
-{
-echo "<script>alert('Something went wrong. Please try again');</script>";
-}
+
+  if($_POST['password'] !== $_POST['confirmpassword'])
+  {
+    echo "<script>alert('The two passwords do not match')</script>";
+  }
+  else{
+    $fname=$_POST['fullname'];
+    $email=$_POST['emailid'];
+    $mobile=$_POST['mobileno'];
+    $password=md5($_POST['password']);
+    $sql="INSERT INTO  tblusers(FullName,EmailId,ContactNo,Password) VALUES(:fname,:email,:mobile,:password)";
+    $query = $dbh->prepare($sql);
+    $query->bindParam(':fname',$fname,PDO::PARAM_STR);
+    $query->bindParam(':email',$email,PDO::PARAM_STR);
+    $query->bindParam(':mobile',$mobile,PDO::PARAM_STR);
+    $query->bindParam(':password',$password,PDO::PARAM_STR);
+    $query->execute();
+    $lastInsertId = $dbh->lastInsertId();
+    if($lastInsertId)
+    {
+    echo "<script>alert('Registration successfull. Now you can login');</script>";
+    }
+    else
+    {
+    echo "<script>alert('Something went wrong. Please try again');</script>";
+    }
+
+  }
 }
 
 ?>
@@ -43,13 +51,16 @@ error:function (){}
 }
 </script>
 <script type="text/javascript">
+
 function valid()
 {
-if(document.signup.password.value!= document.signup.confirmpassword.value)
+  let password1 = document.getElementById('password').value;
+  let password2 = document.getElementById('confirmpassword').value;
+  alert(password1);
+  alert(password2);
+if(password1 !== password2)
 {
-alert("Password and Confirm Password Field do not match  !!");
-document.signup.confirmpassword.focus();
-return false;
+  alert('The two passwords do not match');
 }
 return true;
 }
@@ -65,7 +76,7 @@ return true;
         <div class="row">
           <div class="signup_wrap">
             <div class="col-md-12 col-sm-6">
-              <form  method="post" name="signup" onSubmit="return valid();">
+              <form  method="post" name="signup">
                 <div class="form-group">
                   <input type="text" class="form-control" name="fullname" placeholder="Full Name" required="required">
                 </div>
@@ -74,13 +85,13 @@ return true;
                 </div>
                 <div class="form-group">
                   <input type="email" class="form-control" name="emailid" id="emailid" onBlur="checkAvailability()" placeholder="Email Address" required="required">
-                   <span id="user-availability-status" style="font-size:12px;"></span> 
+                   <span id="user-availability-status" style="font-size:12px;"></span>
                 </div>
                 <div class="form-group">
-                  <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+                  <input type="password" class="form-control" id="password" name="password" placeholder="Password" required="required">
                 </div>
                 <div class="form-group">
-                  <input type="password" class="form-control" name="confirmpassword" placeholder="Confirm Password" required="required">
+                  <input type="password"  class="form-control" id="confirmpassword" name="confirmpassword" placeholder="Confirm Password" required="required">
                 </div>
                 <div class="form-group checkbox">
                   <input type="checkbox" id="terms_agree" required="required" checked="">
@@ -91,7 +102,7 @@ return true;
                 </div>
               </form>
             </div>
-            
+
           </div>
         </div>
       </div>
