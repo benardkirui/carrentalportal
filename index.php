@@ -29,7 +29,7 @@
 
           <div class="row h-100">
             <div class="col-lg-8 mx-auto align-self-center">
-              <h1 class="display-3 text-center">Group 6</h1>
+              <h1 class="display-3 text-center">FAITH MOTORS COMPANY</h1>
               <div class="accordion accordion-arrow-right" id="accordion-4">
                 <div class="card bg-transparent">
                   <h5 class="card-title bg-transparent">
@@ -38,7 +38,7 @@
 
                   <div id="collapse-4-1" class="collapse" data-parent="#accordion-4" style="">
                     <div class="card-body">
-                      Absolutely! We work with top payment companies which guarantees your safety and security. All billing information is stored on our payment processing partner which has the most stringent level of certification available in the payments industry.
+                      Travelling has been a problem to most people especially those who does not own a car or can not use their own so car rental portal make it easy.
                     </div>
                   </div>
                 </div>
